@@ -1,0 +1,488 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: calc({{ section.settings.padding_top }}px * 0.75);
+    padding-bottom: calc({{ section.settings.padding_bottom }}px * 0.75);
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .ck-collections-tab__header { 
+    text-align: center; 
+    margin-bottom: 30px; 
+  }
+
+  .collection-tabs { 
+    display: flex; 
+    justify-content: 
+    center; gap: 30px; 
+    border-bottom: 1px solid #e5e5e5; 
+    margin-bottom: 40px; 
+    flex-wrap: wrap; 
+  }
+
+  a.tab-link { 
+    text-decoration: none; 
+    color: #000; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    font-size: 14px; 
+    padding-bottom: 10px; 
+    cursor: pointer; 
+    border-bottom: 2px solid transparent; 
+  }
+
+  a.tab-link.active { 
+    color: rgba(0, 107, 229, 1); 
+  }
+
+  .collection-tab-content { 
+    display: none; 
+  }
+  .collection-tab-content.active { 
+    display: block; 
+  }
+
+  .product-card { 
+    border: 1px solid #f0f0f0; 
+    border-radius: 4px; 
+    background: #F5FBFE; 
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .product-card img { 
+    max-width: 135px;
+    max-height: 215px;
+    width: 100%;
+    aspect-ratio: 178 / 265; 
+    object-fit: cover;
+  }
+
+  .product-info { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: flex-start;
+      text-align: left;
+      padding: 10px;
+  }
+
+  .product-title {
+    font-family: var(--font-family-body);
+    font-weight: var(--font-weight-400);
+    font-size: 16px; 
+    margin: 10px 0;
+    letter-spacing: 0;
+  }
+
+  .product-price { 
+    font-family: var(--font-family-body);
+    font-weight: var(--font-weight-700);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0; 
+    color: #000; 
+  }
+
+  .add-to-cart-btn { 
+    background: rgba(60, 60, 60, 1);
+    border-radius: 4px;
+    border: none; 
+    padding: 8px 12px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 5px; 
+    cursor: pointer; 
+    width: fit-content;
+    color: white;
+    font-family: var(--font-family-body);
+    font-weight: var(--font-weight-700);
+    letter-spacing: 0;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .product-card-footer { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    border-top: 1px solid #e5e5e5;
+    padding: 10px 15px;
+  }
+
+  .see-all-container { 
+    text-align: center; 
+    margin-top: 40px; 
+  }
+
+  .see-all-btn { 
+    border: 1px solid #004b91; 
+    padding: 10px 30px; 
+    text-decoration: none; 
+    color: #004b91; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px; 
+  }
+
+  .swiper-pagination { 
+    position: relative; 
+    margin-top: 20px; 
+  }
+
+  @media screen and (min-width: 990px) {
+    .collection-tab-content.active {
+      display: grid !important;
+      grid-template-columns: repeat(5, 1fr) !important;
+      gap: 25px !important;
+    }
+
+    .layout-slider ck-tab-slider.swiper {
+      display: grid !important;
+      grid-template-columns: repeat(5, 1fr) !important;
+      gap: 25px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: visible !important;
+    }
+
+    .layout-slider ck-tab-slider .swiper-wrapper {
+      display: contents !important;
+    }
+
+    .layout-slider ck-tab-slider .swiper-slide,
+    .layout-slider ck-tab-slider .product-card.swiper-slide {
+      width: 100% !important;
+      max-width: 100% !important;
+      transform: none !important;
+      display: block !important;
+      gap: 20px !important;
+    }
+
+    .layout-slider ck-tab-slider .swiper-pagination {
+      display: none !important;
+    }
+
+    .product-card img { 
+      max-width: 178px;
+      max-height: 265px;
+    }
+
+    .product-title {
+      font-size: 20px;
+      line-height: 30px;
+      margin: 6px 0;
+    }
+
+    .product-price { 
+      font-size: 20px;
+      line-height: 30px;
+    }
+    
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .layout-grid .collection-tab-content.active {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+    .layout-grid .product-card { grid-column: span 2; }
+    .layout-grid .product-card:nth-child(4) { grid-column: 2 / span 2; }
+    .layout-grid .product-card:nth-child(5) { grid-column: 4 / span 2; }
+
+    .product-card img { 
+      max-width: 205px;
+      max-height: 325px;
+    }
+
+    .product-title {
+      font-size: 20px;
+      line-height: 30px;
+      margin: 10px 0;
+    }
+
+    .product-price { 
+      font-size: 20px;
+      line-height: 30px;
+      margin: 10px 0;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .layout-grid .collection-tab-content.active {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .layout-grid .product-card:nth-child(5) {
+      grid-column: 1 / -1;
+      justify-self: center;
+      max-width: calc(50% - 10px);
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient ck-collections-tab section-{{ section.id }}-padding layout-{{ section.settings.layout_type }}">
+  <div class="page-width">
+    <div class="ck-collections-tab__header">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.subheading }}</p>
+    </div>
+
+    <div class="collection-tabs">
+      {% for collection_item in section.settings.collection_list %}
+        <a class="tab-link {% if forloop.first %}active{% endif %}" data-tab="tab-{{ forloop.index }}-{{ section.id }}">
+          {{ collection_item.title }}
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="tabs-container">
+      {% for collection_item in section.settings.collection_list %}
+        {% assign collection = collection_item %}
+
+        <div id="tab-{{ forloop.index }}-{{ section.id }}" class="collection-tab-content {% if forloop.first %}active{% endif %}">
+          {% if collection.products.size > 0 %}
+            
+            {% if section.settings.layout_type == 'slider' %}
+              <ck-tab-slider class="swiper">
+                <div class="swiper-wrapper">
+            {% endif %}
+
+            {% for product in collection.products limit: 5 %}
+              <div class="product-card {% if section.settings.layout_type == 'slider' %}swiper-slide{% endif %}">
+                {{ product.featured_image | image_url: width: 400, height: 300 | image_tag: alt: product.title }}
+                <div class="product-info">
+                  <div class="rating-star">
+                    {% for i in (1..5) %}
+                      {% if i <= product.metafields.custom.rating %}
+                        <span class="icon">{{ "icon-star-fill.svg" | inline_asset_content }}</span>
+                      {% else %}
+                        <span class="icon">{{ "icon-star-fill.svg" | inline_asset_content }}</span>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                  <div class="product-title">{{ product.title }}</div>
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-price">{{ product.price | money }}</div>
+                  <button 
+                    class="add-to-cart-btn" data-variant-id="{{ product.first_available_variant.id }}"
+                    {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                  > 
+                    {%- if product.selected_or_first_available_variant.available -%}
+                      <span class="icon">{{ "icon-cart-plus.svg" | inline_asset_content }}</span>
+                      <span>Add To Cart</span> 
+                    {%- else -%}
+                      <span class="sold-out-btn">Sold Out</span>
+                    {%- endif -%}
+                  </button>
+                </div>
+              </div>
+            {% endfor %}
+
+            {% if section.settings.layout_type == 'slider' %}
+                </div>
+                <div class="swiper-pagination"></div>
+              </ck-tab-slider>
+            {% endif %}
+
+          {% else %}
+            <p style="grid-column: 1 / -1; text-align: center;">No products found in this collection.</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="see-all-container">
+      <a href="{{ section.settings.button_link }}" class="see-all-btn">{{ section.settings.button_text }} &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.tab-link').forEach(tab => {
+    tab.addEventListener('click', function() {
+      const section = this.closest('.ck-collections-tab');
+      const tabId = this.getAttribute('data-tab');
+  
+      section.querySelectorAll('.tab-link').forEach(t => t.classList.remove('active'));
+      section.querySelectorAll('.collection-tab-content').forEach(c => c.classList.remove('active'));
+  
+      this.classList.add('active');
+      const activeTab = document.getElementById(tabId);
+      activeTab.classList.add('active');
+
+      const slider = activeTab.querySelector('ck-tab-slider');
+      if (slider && slider.swiperInstance) {
+        slider.swiperInstance.update();
+      }
+    });
+  });
+</script>
+<script src="{{ 'ck-tab-slider.js' | asset_url }}" defer="defer"></script>
+<script>
+  // Tab Switching Logic (Existing)
+  document.querySelectorAll('.tab-link').forEach(tab => {
+    tab.addEventListener('click', function() {
+      const section = this.closest('.ck-collections-tab');
+      const tabId = this.getAttribute('data-tab');
+      section.querySelectorAll('.tab-link').forEach(t => t.classList.remove('active'));
+      section.querySelectorAll('.collection-tab-content').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      const activeTab = document.getElementById(tabId);
+      activeTab.classList.add('active');
+
+      const slider = activeTab.querySelector('ck-tab-slider');
+      if (slider && slider.swiperInstance) {
+        slider.swiperInstance.update();
+      }
+    });
+  });
+
+  // AJAX Add to Cart Logic for Dawn
+  document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const variantId = this.getAttribute('data-variant-id');
+      const cartDrawer = document.querySelector('cart-drawer');
+      const cartNotification = document.querySelector('cart-notification');
+      
+      this.classList.add('loading'); // Optional: add a loading state class
+
+      let formData = {
+        'items': [{
+          'id': variantId,
+          'quantity': 1
+        }],
+        // This tells Dawn to return the updated sections so the drawer updates
+        'sections': cartDrawer ? 'cart-drawer,cart-icon-bubble' : 'cart-notification-product,cart-notification-button,cart-icon-bubble',
+        'sections_url': window.location.pathname
+      };
+
+      fetch(window.Shopify.routes.root + 'cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(response => {
+        if (response.status) {
+          console.error(response.description);
+          return;
+        }
+
+        // 1. Update the Cart Bubble (the little number on the cart icon)
+        const cartIconBubble = document.getElementById('cart-icon-bubble');
+        if (cartIconBubble && response.sections['cart-icon-bubble']) {
+          cartIconBubble.innerHTML = response.sections['cart-icon-bubble'];
+        }
+
+        // 2. Open Dawn's Cart Drawer or Notification
+        if (cartDrawer) {
+          cartDrawer.renderContents(response);
+        } else if (cartNotification) {
+          cartNotification.renderContents(response);
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      })
+      .finally(() => {
+        this.classList.remove('loading');
+      });
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "CK Collections Tab",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Discover Our Diverse Collection"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Explore Genres And Topics That Inspire And Engage"
+      },
+      {
+        "type": "select",
+        "id": "layout_type",
+        "label": "Mobile/Tablet Layout",
+        "options": [
+          { "value": "grid", "label": "Grid" },
+          { "value": "slider", "label": "Slider (Swiper)" }
+        ],
+        "default": "grid"
+      },
+      {
+        "type": "collection_list",
+        "id": "collection_list",
+        "label": "Collections",
+        "limit": 8
+      },
+      {
+        "type": "header",
+        "content": "Section Button"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "See All"
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Color Scheme",
+        "default": "scheme-1"
+      }, {
+        "type": "header",
+        "content": "Section Padding"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 40
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 52
+      }
+    ],
+    "presets": [
+      {
+        "name": "CK Collections Tab"
+      }
+    ]
+  }
+{% endschema %}

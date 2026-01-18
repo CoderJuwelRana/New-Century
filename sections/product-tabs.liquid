@@ -1,0 +1,401 @@
+{{ 'section-product-tabs.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-tabs.js' | asset_url }}" defer="defer"></script>
+
+{% stylesheet %}
+  .section-product-tabs .custom-color,
+  .section-product-tabs .custom-color > :is(h1, h2, h3, h4, h5, h6, p, *) {
+    color: var(--color);
+  }
+  .product-tab-inner {
+    border: 1px solid #dadada;
+    margin-bottom: 100px;
+    border-radius: 10px;
+  }
+  .section-product-tabs .product-tab--buttons-list {
+    border-bottom: 1px solid #dadada;
+  }
+  .section-product-tabs .product-tab--buttons-list .product-tab--button {
+    border-right: 1px solid #dadada;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 400;
+  }
+  .section-product-tabs .product-tab--buttons-list .product-tab--button:last-of-type {
+    border-right: 0;
+  }
+  .section-product-tabs {
+    .product-tab--button.active {
+      color: #00579f;
+    }
+  }
+  .section-product-tabs .tab__content-inner {
+    padding: 20px 40px 40px;
+    font-size: 16px;
+    letter-spacing: normal;
+    line-height: 30px;
+  }
+{% endstylesheet %}
+
+<product-tabs
+  {% if section.settings.section_id != blank %}
+    id="{{ section.settings.section_id | handleize }}"
+  {% endif %}
+  class="d-block product-active--{{ section.settings.active_tab }}"
+  style="
+    --product-tabs-border: {{ section.settings.border }};
+    --product-tabs-border-width: {{ section.settings.border_width }}px;
+  "
+>
+  <div
+    class="spacing-style page-width color-{{ section.settings.color_scheme }}"
+  >
+    <div class="product-tab-inner">
+      <div class="product-tab--buttons">
+        <div class="product-tab--buttons-list">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.heading != blank -%}
+              <button
+                {{ block.shopify_attributes }}
+                data-tab-target="#ProductTabs-{{ block.id }}-{{ forloop.index }}"
+                class="product-tab--button {% if forloop.first == true %} active{% endif %}"
+              >
+                <span class="tab__button-label">{{ block.settings.heading }}</span>
+              </button>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="product-tab--contents">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.heading != blank -%}
+            <div
+              id="ProductTabs-{{ block.id }}-{{ forloop.index }}"
+              class="product-tab--content{% if forloop.first == true %} active{% endif %}"
+              data-tab-content
+            >
+              <div class="tab__content-inner rte">
+                {%- case block.type -%}
+                  {%- when 'description' -%}
+                    {%- if product.description != blank -%}
+                      {{ product.description }}
+                    {%- else -%}
+                      {{ block.settings.content }}
+                      {{ block.settings.page.content }}
+                    {%- endif -%}
+
+
+
+                  {%- when 'shipping_info' -%}
+                    {{ block.settings.content }}
+                    {{ block.settings.page.content }}
+
+                  {%- when 'support' -%}
+                    {{ block.settings.content }}
+                    {{ block.settings.page.content }}
+
+                  {%- when 'rating_eviews' -%}
+                    <div class="jdgm-widget--container">
+                      <!-- Start of Judge.me code -->
+                      {% assign has_legacy = false -%}
+                      {%- if product.metafields.judgeme.widget.size > 20 %}{% assign has_legacy = true %}{% endif %}
+                      <div style="clear:both"></div>
+                      <div
+                        id="judgeme_product_reviews"
+                        class="jdgm-widget jdgm-review-widget"
+                        data-product-title="{{ product.title | escape }}"
+                        data-id="{{ product.id }}"
+                        data-product-id="{{ product.id }}"
+                        data-widget="review"
+                        data-auto-install="false"
+                        data-shop-reviews-count="{{ shop.metafields.judgeme.shop_reviews_count | default: 0 | escape }}"
+                        data-entry-point="review_widget.js"
+                        data-entry-key="review-widget/main.js"
+                      >
+                        {% if has_legacy %}
+                          <div class="jdgm-legacy-widget-content" style="display: none;">
+                            {{ product.metafields.judgeme.widget }}
+                          </div>
+                        {% endif %}
+                      </div>
+                      {% if product.metafields.judgeme.review_widget_data %}
+                        <script>
+                          jdgm.data ||= {}; jdgm.data.reviewWidget ||= {}; jdgm.data.reviewWidget[{{ product.id }}] = {{ product.metafields.judgeme.review_widget_data }}
+                        </script>
+                      {% endif %}
+                      <!-- End of Judge.me code -->
+                    </div>
+
+                  {%- when 'custom_content' -%}
+                    {{ block.settings.content }}
+                    {{ block.settings.page.content }}
+                {%- endcase -%}
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</product-tabs>
+
+{% schema %}
+{
+  "name": "Product tabs",
+  "tag": "section",
+  "class": "section section-product-tabs",
+  "enabled_on": {
+    "templates": ["product"],
+    "groups": ["aside"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Custom Id"
+    },
+    {
+      "type": "select",
+      "id": "active_tab",
+      "label": "Active tab style",
+      "default": "border-underline",
+      "options": [
+        {
+          "value": "border-underline",
+          "label": "Border underline"
+        },
+        {
+          "value": "color-swap",
+          "label": "Color swap"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "border",
+      "label": "Border Style",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "solid",
+          "label": "Solid"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "px",
+      "label": "Section: border width",
+      "default": 1,
+      "visible_if": "{{ section.settings.border != 'none' }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Section Color",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Seciton: Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Padding mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile-padding-block-start",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile-padding-block-end",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    }
+  ],
+  "blocks": [
+    {
+      "limit": 1,
+      "name": "Description",
+      "type": "description",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Description"
+        },
+        {
+          "type": "header",
+          "content": "Tab content"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page"
+        }
+      ]
+    },
+    {
+      "limit": 1,
+      "name": "Rating and Reviews",
+      "type": "rating_eviews",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Rating and Reviews",
+          "info": "Please install Judgme review app. The review widgets will be diplayed here."
+        }
+      ]
+    },
+    {
+      "limit": 1,
+      "name": "Shipping Info",
+      "type": "shipping_info",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Shipping Info",
+          "info": "Please make a metafield (type - Richtext) for product with matching handle: \"{{ product.metafields.custom.shipping_info }}\""
+        },
+        {
+          "type": "header",
+          "content": "Tab content"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page"
+        }
+      ]
+    },
+    {
+      "limit": 1,
+      "name": "Support",
+      "type": "support",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Support",
+          "info": "Please make a metafield (type - Richtext) for product with matching handle: \"{{ product.metafields.custom.support }}\""
+        },
+        {
+          "type": "header",
+          "content": "Tab content"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page"
+        }
+      ]
+    },
+    {
+      "name": "Custom content",
+      "type": "custom_content",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Custom Content"
+        },
+        {
+          "type": "header",
+          "content": "Tab content"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product tabs",
+      "category": "t:categories.products",
+      "blocks": [
+        {
+          "type": "description"
+        },
+        {
+          "type": "rating_eviews"
+        },
+        {
+          "type": "shipping_info"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

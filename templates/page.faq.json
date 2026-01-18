@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_faq_fDTnUt": {
+      "type": "custom-faq",
+      "blocks": {
+        "faq_P6T3Gh": {
+          "type": "faq",
+          "settings": {
+            "question": "1. Do you sell zappers or Syncrometers®?",
+            "answer": "<p>The only information we can pass on is what is actually in Dr. Clark's books. In the back of each of her books there is a section called \"Sources\". These are products that she has tested and deemed pure. She also gives the contact information for purchase.<\/p>"
+          }
+        },
+        "faq_3mnm8U": {
+          "type": "faq",
+          "settings": {
+            "question": "2. Can you tell me where to purchase items in Dr. Clark's books?",
+            "answer": "<p>The only information we can pass on is what is actually in Dr. Clark's books. In the back of each of her books there is a section called \"Sources\". These are products that she has tested and deemed pure. She also gives the contact information for purchase.<\/p>"
+          }
+        },
+        "faq_xggBfV": {
+          "type": "faq",
+          "settings": {
+            "question": "3. Do you have a list of doctors, dentists or clinics that follow Dr. Clark's protocol?",
+            "answer": "<p>The only information we can pass on is what is actually in Dr. Clark's books. In the back of each of her books there is a section called \"Sources\". These are products that she has tested and deemed pure. She also gives the contact information for purchase.<\/p>"
+          }
+        },
+        "faq_apk6q4": {
+          "type": "faq",
+          "settings": {
+            "question": "4. Can you help me publish a book?",
+            "answer": "<p>The only information we can pass on is what is actually in Dr. Clark's books. In the back of each of her books there is a section called \"Sources\". These are products that she has tested and deemed pure. She also gives the contact information for purchase.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_P6T3Gh",
+        "faq_3mnm8U",
+        "faq_xggBfV",
+        "faq_apk6q4"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "title": "FAQ’s",
+        "subtitle": "We take messages only and guarantee to respond to your call by 3pm PST the next business day. Email us for the fastest communication possible.",
+        "bg": "#ffffff",
+        "pad": 60,
+        "width": 1220
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_faq_fDTnUt"
+  ]
+}

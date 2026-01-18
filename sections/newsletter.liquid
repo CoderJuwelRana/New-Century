@@ -1,0 +1,560 @@
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag: preload: false }}
+{{ 'newsletter-section.css' | asset_url | stylesheet_tag: preload: false }}
+
+{%- style -%}
+            .section-{{ section.id }}-padding {
+              padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+              padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+            }
+
+            @media screen and (min-width: 750px) {
+              .section-{{ section.id }}-padding {
+                padding-top: {{ section.settings.padding_top }}px;
+                padding-bottom: {{ section.settings.padding_bottom }}px;
+              }
+            }
+
+            .newsletter .newsletter-custom__wpapper {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin: auto;
+              column-gap: 5rem;
+          padding: 6rem 4rem;
+              background: linear-gradient(90deg, #13569E 0%, #7C9DC0 100%);
+              border-radius: 20px;
+            }
+
+            .newsletter .newsletter-custom__wpapper .newsletter-right {
+              max-width: 660px;
+              width: 100%;
+            }
+
+            .newsletter .newsletter-custom__wpapper .newsletter-form {
+              max-width: 100%;
+            }
+
+            .newsletter .newsletter-right .field__input {
+              height: 6.2rem;
+                  border-radius: 999px;
+            }
+
+            .newsletter .newsletter-right .button {
+              font-size: 20px;
+              text-transform: uppercase;
+              height: 100%;
+              font-family: var(--font-family-Gotham);
+              font-weight: var(--font-family-Gotham-Medium);
+
+              @media screen and (width >= 750px) {
+                min-height: calc(5.8rem + var(--buttons-border-width) * 2);
+              }
+            }
+           .newsletter svg.message-icon {
+                margin-right: 10px;
+            }
+
+
+            .newsletter .newsletter-right .newsletter-checkbox {
+              display: flex;
+              align-items: center;
+              margin-top: 20px;
+              column-gap: 11px;
+              input[type="checkbox"] {
+                  margin: 0;
+                  width: 16px;
+                  height: 16px;
+              }
+            }
+           .newsletter .button-icon {
+              width: 38px;
+              height: 38px;
+              background-color: rgb(var(--color-button));
+              align-content: center;
+              border-radius: 50%;
+          }
+
+            .newsletter .newsletter-right .newsletter-checkbox p {
+              font-size: 14px;
+              margin: 0 0;
+              line-height: 1.2;
+
+            }
+              .newsletter .field__input:focus, .field__input:not(:placeholder-shown), .field__input:-webkit-autofill{
+                padding: 0;
+                padding-left: 2rem;
+
+              }
+
+
+            .newsletter .input-label {
+              width: 100%;
+            }
+
+            .newsletter .newsletter-right .field__label {
+              top: 50%;
+              transform: translateY(-50%);
+              align-items: center;
+              font-size: 20px;
+              font-family: var(--font-family-Gotham);
+              font-weight: var(--font-family-Gotham-Book);
+            }
+
+            .newsletter .field:after {
+              box-shadow: none;
+            }
+
+            .newsletter:where(.page-width),
+            .newsletter:not(.page-width) {
+              .newsletter__wrapper {
+                padding-inline: 0;
+              }
+            }
+
+            .newsletter__wrapper .newsletter-form__field-wrapper {
+              max-width: 100%;
+            }
+
+            .newsletter .newsletter-right .field__input:focus~.field__label {
+              opacity: 0;
+            }
+
+            /* .newsletter .newsletter-right .field__input:not(:placeholder-shown) ~ .field__label{
+              opacity: 0;
+            } */
+            .newsletter .newsletter-custom__wpapper .newsletter-form__button {
+              width: fit-content;
+              padding-right: 0px;
+              padding: 10px;
+            }
+
+            .newsletter .field:hover.field:after {
+              box-shadow: none;
+            }
+
+            .newsletter-left {
+              max-width: fit-content;
+              text-align: left;
+              width: 100%;
+            }
+
+            .newsletter .newsletter-left .inline-richtext {
+              line-height: 1.3;
+              font-weight: var(--font-weight-700);
+              margin-top: 0px;
+              margin-bottom: 0px;
+              font-size: 28px;
+            }
+            .newsletter .newsletter-left .newsletter__subheading {
+                font-size: 16px;
+                margin-top: 10px;
+                width: 100%;
+                letter-spacing: normal;
+                max-width: 100%;
+                line-height: 1.3;
+            }
+
+            .newsletter .button:not([disabled]):hover:after {
+              --border-offset: 1.3px;
+              box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)), 0 0 0 calc(var(--buttons-border-width) + 0px) rgba(var(--color-button), var(--alpha-button-background));
+            }
+
+            @media screen and (max-width:1150px) {
+              .newsletter .newsletter-custom__wpapper {
+                padding: 4rem 4rem;
+              }
+
+              .newsletter .newsletter-right .button {
+                font-size: 16px;
+              }
+
+            }
+
+            @media screen and (max-width:989px) {
+              .newsletter .newsletter-left {
+                max-width: 100%;
+              }
+
+              .newsletter .newsletter-custom__wpapper .newsletter-right {
+                max-width: 100%;
+              }
+
+              .newsletter .newsletter-custom__wpapper {
+                justify-content: center;
+                row-gap: 3rem;
+                flex-wrap: wrap;
+              }
+            }
+
+            @media screen and (max-width: 750px) {
+              .newsletter .newsletter-form__field-wrapper .field {
+                flex-direction: column;
+                row-gap: 2rem;
+              }
+
+              /* .newsletter .newsletter-custom__wpapper .newsletter-form__button {
+                position: static;
+              } */
+              .newsletter .newsletter-right .field__label {
+                font-size: 14px;
+              }
+
+              .newsletter__wrapper {
+                padding-right: 0rem;
+                padding-left: 0rem;
+              }
+
+              .newsletter .newsletter-right .newsletter-checkbox {
+                align-items: self-start;
+                text-align: left;
+              }
+
+              .newsletter .newsletter-custom__wpapper {
+                padding: 4rem 2rem;
+              }
+
+              .newsletter .newsletter-right .button {
+                font-size: 12px;
+                padding: 0 1rem;
+              }
+
+              .newsletter .newsletter-left .inline-richtext {
+                margin-bottom: 0px;
+                font-size: 22px;
+              }
+
+              .newsletter .newsletter-left .newsletter__subheading {
+                  font-size: 14px;
+              }
+              .newsletter .newsletter-custom__wpapper .newsletter-form__button {
+                padding: 10px 5px;
+              }
+              .newsletter .newsletter-right .newsletter-checkbox p {
+                  font-size: 12px;
+              }
+              .newsletter .newsletter-right .field__input {
+                  height: 5.2rem;
+              }
+              .newsletter svg.message-icon {
+                margin-right: 5px;
+            }
+            }
+
+            .newsletter {
+              position: relative;
+            }
+  /*
+            .newsletter__wrapper:after {
+              content: "";
+              position: absolute;
+              top: auto;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              height: 90px;
+              background-color: #ffffec;
+            } */
+{%- endstyle -%}
+
+<div class="newsletter center{% if section.settings.full_width == false %} newsletter--narrow page-width{% endif %}">
+  <div class="newsletter__wrapper color-{{ section.settings.section_color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
+    <div class="gradient color-{{ section.settings.color_scheme }}">
+      <div class="{% if section.settings.full_width %} page-width{% endif %}">
+        <div class="newsletter-custom__wpapper">
+          <div class="newsletter-left">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {%- when 'heading' -%}
+                  <h2
+                    class="inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                    {{ block.shopify_attributes }}
+                    {% if settings.animations_reveal_on_scroll %}
+                      data-cascade
+                      style="--animation-order: {{ forloop.index }};"
+                    {% endif %}
+                  >
+                    {{ block.settings.heading }}
+                  </h2>
+                {%- when 'paragraph' -%}
+                  <div
+                    class="newsletter__subheading rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                    {{ block.shopify_attributes }}
+                    {% if settings.animations_reveal_on_scroll %}
+                      data-cascade
+                      style="--animation-order: {{ forloop.index }};"
+                    {% endif %}
+                  >
+                    {{ block.settings.text }}
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          </div>
+          <div class="newsletter-right">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'email_form' -%}
+                  <div {{ block.shopify_attributes }}>
+                    {% assign form_id = 'Newsletter-form-' | append: section.id %}
+                    {% form 'customer', id: form_id, class: 'newsletter-form' %}
+                      <input type="hidden" name="contact[tags]" value="newsletter">
+                      <div
+                        class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                        {% if settings.animations_reveal_on_scroll %}
+                          data-cascade
+                          style="--animation-order: {{ forloop.index }};"
+                        {% endif %}
+                      >
+                        <div class="field">
+                          <div class="input-label">
+                            <input
+                              id="NewsletterForm--{{ section.id }}"
+                              type="email"
+                              name="contact[email]"
+                              class="field__input"
+                              value="{{ form.email }}"
+                              aria-required="true"
+                              autocorrect="off"
+                              autocapitalize="off"
+                              autocomplete="email"
+                              {% if form.errors %}
+                                autofocus
+                                aria-invalid="true"
+                                aria-describedby="Newsletter-error--{{ section.id }}"
+                              {% elsif form.posted_successfully? %}
+                                aria-describedby="Newsletter-success--{{ section.id }}"
+                              {% endif %}
+                              placeholder=""
+                              required
+                            >
+                            <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                              <svg
+                                class="message-icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="14"
+                                viewBox="0 0 20 14"
+                                fill="none"
+                              >
+                                <path d="M20 1.7202C20 0.771695 19.1743 0 18.1595 0H1.84052C0.825863 3.65092e-05 0.000351564 0.771366 0 1.7205V1.72079V12.2792C0 13.2396 0.834066 14 1.84114 14H18.1588C19.1863 14 20 13.2205 20 12.2792V1.72079C20 1.72072 20 1.72064 20 1.72057C20 1.72046 20 1.72035 20 1.7202ZM1.84052 1.09531H18.1595C18.5282 1.09531 18.8281 1.37567 18.8281 1.72112C18.8281 1.90468 18.7305 2.07507 18.5668 2.17701L10.3713 7.28377C10.1458 7.42429 9.8543 7.42433 9.62875 7.28377C9.62875 7.28377 1.43301 2.1769 1.43317 2.17701C1.43321 2.17704 1.43305 2.17693 1.43301 2.1769C1.2695 2.07507 1.17188 1.90469 1.17188 1.7202C1.17188 1.37563 1.47184 1.09531 1.84052 1.09531ZM18.1589 12.9047H1.84114C1.47633 12.9047 1.17188 12.629 1.17188 12.2792V3.33059L8.97867 8.19504C9.2889 8.38835 9.64445 8.48499 10 8.48499C10.3556 8.48499 10.7112 8.38835 11.0214 8.19504L18.8281 3.33059V12.2792C18.8281 12.6202 18.5332 12.9047 18.1589 12.9047Z" fill="currentColor"/>
+                              </svg>
+
+                              {{ 'newsletter.label' | t }}
+                            </label>
+                          </div>
+
+                          <button
+                            type="submit"
+                            class="newsletter-form__button field__button"
+                            name="commit"
+                            id="Subscribe"
+                            aria-label="{{ 'newsletter.button_label' | t }}"
+                          >
+                            {% comment %}
+                              <span class="svg-wrapper">
+                                {{- 'icon-arrow.svg' | inline_asset_content -}}
+                              </span>
+                            {% endcomment %}
+                            <div class="button-icon">
+                              {{ block.settings.button_text }}
+                            </div>
+                          </button>
+                        </div>
+                        {%- if form.errors -%}
+                          <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+                            <span class="svg-wrapper">
+                              {{- 'icon-error.svg' | inline_asset_content -}}
+                            </span>
+                            {{- form.errors.translated_fields.email | capitalize }}
+                            {{ form.errors.messages.email -}}
+                          </small>
+                        {%- endif -%}
+                      </div>
+                      {%- if form.posted_successfully? -%}
+                        <h3
+                          class="newsletter-form__message newsletter-form__message--success form__message"
+                          id="Newsletter-success--{{ section.id }}"
+                          tabindex="-1"
+                          autofocus
+                        >
+                          <span class="svg-wrapper">
+                            {{- 'icon-success.svg' | inline_asset_content -}}
+                          </span>
+                          {{- 'newsletter.success' | t }}
+                        </h3>
+                      {%- endif -%}
+                    {% endform %}
+                    {%- if block.settings.check_info != blank -%}
+                      <div class="newsletter-checkbox">
+                        <input
+                          type="checkbox"
+                          form="{{ form_id }}"
+                          name="promotion"
+                          required
+                          value="{{ block.settings.check_info }}"
+                        >
+                        <p>{{ block.settings.check_info }}</p>
+                      </div>
+                    {%- endif -%}
+                  </div>
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.newsletter.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.multirow.settings.container_color_scheme.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "default": true,
+      "label": "t:sections.newsletter.settings.full_width.label"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.newsletter.settings.paragraph.content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.newsletter.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "t:sections.newsletter.blocks.heading.settings.heading.default",
+          "label": "t:sections.newsletter.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "hxl",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "hxxl",
+              "label": "t:sections.all.heading_size.options__5.label"
+            }
+          ],
+          "default": "h1",
+          "label": "t:sections.all.heading_size.label"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "name": "t:sections.newsletter.blocks.paragraph.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "t:sections.newsletter.blocks.paragraph.settings.paragraph.default",
+          "label": "t:sections.newsletter.blocks.paragraph.settings.paragraph.label"
+        }
+      ]
+    },
+    {
+      "type": "email_form",
+      "name": "t:sections.newsletter.blocks.email_form.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "html",
+          "id": "button_text",
+          "default": "Button",
+          "label": "Button Icon"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "check_info",
+          "label": "CheckBox info",
+          "default": "Sign up for updates on new arrivals and exclusive promos"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.newsletter.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "paragraph"
+        },
+        {
+          "type": "email_form"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

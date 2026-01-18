@@ -1,0 +1,42 @@
+{%- comment -%}
+  Renders a payment icon block
+
+  Accepts:
+  - block {block} - Block object
+
+  Usage:
+  {% render 'ck.payment-icon', block: block %}
+{%- endcomment -%}
+
+
+{%- stylesheet -%}
+  .product-block--payment-icon {
+    margin-top: 20px;
+    h3 {
+    font-size: 16px;
+    line-height: normal;
+    margin-bottom: 10px;
+    font-family: var(--font-body-family);
+    } 
+
+    @media only screen and (width < 769px ) {
+      h3 {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+{%- endstylesheet -%}
+
+<div class="product-block--payment-icon" {{ block.shopify_attributes }}>
+  {%- if block.settings.heading != blank -%}
+    <h3>{{ block.settings.heading }}</h3>
+  {%- endif -%}
+
+  {%- if block.settings.image != blank -%}
+    <div class="payment-icon--product-block">
+      {{ block.settings.image | image_url: width: auto, height: auto | image_tag }}
+    </div>
+  {%- endif -%}
+</div>

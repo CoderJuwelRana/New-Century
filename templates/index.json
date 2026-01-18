@@ -1,0 +1,623 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "caption_Krpj8A": {
+          "type": "caption",
+          "settings": {
+            "caption": "New Century Press",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>The 21st Century Book Publisher<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_AeanyL": {
+          "type": "text",
+          "settings": {
+            "text": "Established in 1993 we have developed extensive distribution contacts for books about alternative medicine. NCP is a vendor for Ingram, Baker & Taylor, Amazon, BN.com, and other distributors that target alternative bookstores and health food stores. We personally work with you from start to finish and thereafter.",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "caption_Krpj8A",
+        "heading",
+        "text_AeanyL",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Group_1171275938.png",
+        "image_2": "shopify:\/\/shop_images\/Group_1171275938_1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "scheme-2aecfbe9-5fb4-42b3-b57d-5913ab50b4bb",
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "ck_collections_tab_VErgjE": {
+      "type": "ck-collections-tab",
+      "disabled": true,
+      "name": "CK Collections Tab",
+      "settings": {
+        "heading": "Discover Our Diverse Collection",
+        "subheading": "Explore Genres And Topics That Inspire And Engage",
+        "layout_type": "slider",
+        "collection_list": [
+          "alternative-beliefs",
+          "alternative-health",
+          "dr-clark-translations",
+          "dr-hulda-clark",
+          "frontpage"
+        ],
+        "button_link": "shopify:\/\/collections",
+        "button_text": "See All",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "collections_tab_inDPX8": {
+      "type": "collections-tab",
+      "name": "Collections Tab",
+      "settings": {
+        "collection_list": [
+          "alternative-beliefs",
+          "alternative-health",
+          "dr-clark-translations",
+          "dr-hulda-clark",
+          "frontpage"
+        ],
+        "products_to_show": 5,
+        "title": "Discover Our Diverse Collection",
+        "heading_size": "h1",
+        "description": "<p><br\/>Explore Genres and Topics That Inspire and Engage<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 5,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collection_slider_CnPz6Y": {
+      "type": "collection-slider",
+      "blocks": {
+        "slide_hHkM3q": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ffgngn_1.png",
+            "c_title": "The Foundation of Wellness",
+            "c_text": "Shop the Essential Supplements and Products Based on Dr. Clark's Research.",
+            "button_label": "Buy Now",
+            "button_url": ""
+          }
+        },
+        "slide_w7yqfk": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_1.png",
+            "c_title": "The Foundation of Wellness",
+            "c_text": "Shop the Essential Supplements and Products Based on Dr. Clark's Research.",
+            "button_label": "Buy Now",
+            "button_url": ""
+          }
+        },
+        "slide_qDUky6": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndfnfn_1.png",
+            "c_title": "The Foundation of Wellness",
+            "c_text": "Shop the Essential Supplements and Products Based on Dr. Clark's Research.",
+            "button_label": "Buy Now",
+            "button_url": ""
+          }
+        },
+        "slide_DxtymX": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ffgngn_1.png",
+            "c_title": "",
+            "c_text": "",
+            "button_label": "",
+            "button_url": ""
+          }
+        },
+        "slide_BxBxam": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ndfnfn_1.png",
+            "c_title": "",
+            "c_text": "",
+            "button_label": "",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_hHkM3q",
+        "slide_w7yqfk",
+        "slide_qDUky6",
+        "slide_DxtymX",
+        "slide_BxBxam"
+      ],
+      "name": "Collection Slider",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_tttt9D": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_xpUA3N": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>The Foundation of Wellness: Visit Our Parent Site<\/strong>",
+            "heading_size": "h2"
+          }
+        },
+        "caption_TRMM9i": {
+          "type": "caption",
+          "settings": {
+            "caption": "Shop the Essential Supplements and Products Based on Dr. Clark's Research.",
+            "text_style": "subtitle",
+            "text_size": "large"
+          }
+        },
+        "text_48MYbM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>New Century Press serves as the vital publishing division dedicated to preserving and sharing the revolutionary health knowledge and detailed research of Dr. Hulda Clark. We believe that true wellness begins with accurate, accessible information. To fully implement the detailed purification protocols, cleansing regimens, and innovative health strategies outlined in many of our best-selling non-fiction titles, you need the right tools.\u2028<\/p><p><strong><br\/>That is where our parent site comes in: <\/strong>DrClarkStore.com is the official, trusted source for high-purity nutritional supplements, essential purification products, and genuine Zapper technology recommended directly by Dr. Clark’s original research. Every product is rigorously tested to ensure it meets the highest standards of quality and potency, allowing you to confidently turn the life-changing knowledge you gain from our books into practical, actionable wellness routines.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_chCGa8": {
+          "type": "button",
+          "settings": {
+            "button_label": "<p>Visit <strong>DrClarkStore.com<\/strong><\/p>",
+            "button_link": "#",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_xpUA3N",
+        "caption_TRMM9i",
+        "text_48MYbM",
+        "button_chCGa8"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Illustration.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "bottom",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-16fba3ef-d4d5-4c28-9bb4-c3f8c5e6b1f7",
+        "color_scheme": "scheme-16fba3ef-d4d5-4c28-9bb4-c3f8c5e6b1f7",
+        "padding_top": 92,
+        "padding_bottom": 100
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "alternative-health",
+        "products_to_show": 5,
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "<p>Explore Genres and Topics That Inspire and Engage<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 5,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "ck_image_with_text_txQdgf": {
+      "type": "ck-image-with-text",
+      "blocks": {
+        "heading_g4rhRF": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>The Foundation of Wellness: Visit Our Parent Site<\/strong>",
+            "heading_size": "h2"
+          }
+        },
+        "caption_qK8mT9": {
+          "type": "caption",
+          "settings": {
+            "caption": "Shop the Essential Supplements and Products Based on Dr. Clark's Research.",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "text_fGdeyf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>New Century Press serves as the vital publishing division dedicated to preserving and sharing the revolutionary health knowledge and detailed research of Dr. Hulda Clark. We believe that true wellness begins with accurate, accessible information. To fully implement the detailed purification protocols, cleansing regimens, and innovative health strategies outlined in many of our best-selling non-fiction titles, you need the right tools.\u2028<\/p><p><br\/><strong>That is where our parent site comes in:<\/strong> DrClarkStore.com is the official, trusted source for high-purity nutritional supplements, essential purification products, and genuine Zapper technology recommended directly by Dr. Clark’s original research. Every product is rigorously tested to ensure it meets the highest standards of quality and potency, allowing you to confidently turn the life-changing knowledge you gain from our books into practical, actionable wellness routines.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_Pnq7ae": {
+          "type": "button",
+          "settings": {
+            "button_label": "Buy Now",
+            "button_link": "#",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_g4rhRF",
+        "caption_qK8mT9",
+        "text_fGdeyf",
+        "button_Pnq7ae"
+      ],
+      "name": "CK Image With Text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Group_1171276161.png",
+        "section_color_scheme": "scheme-9710e3e1-5945-42d6-956f-222cd0788774",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "our_commitments_gigzMb": {
+      "type": "our-commitments",
+      "blocks": {
+        "block_Kd3b7t": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle.png",
+            "title": "In-House Manufacturing",
+            "text": "Full control over production ensures consistent quality."
+          }
+        },
+        "block_rBrCb8": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_1.png",
+            "title": "Broad Product Ecosystem",
+            "text": "Diverse offerings boost customer <\/br>value."
+          }
+        },
+        "block_XpqzDk": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_2.png",
+            "title": "Clean-Label Product ",
+            "text": "Pure products with no hidden <\/br>additives."
+          }
+        },
+        "block_CUbXm3": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_3.png",
+            "title": "Verified Raw Material",
+            "text": "Only high-quality, tested <\/br> ingredients."
+          }
+        },
+        "block_x68TLt": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_4.png",
+            "title": "Brand Legacy",
+            "text": "Trusted authority in Dr. Hulda Clark’s <\/br>protocols."
+          }
+        }
+      },
+      "block_order": [
+        "block_Kd3b7t",
+        "block_rBrCb8",
+        "block_XpqzDk",
+        "block_CUbXm3",
+        "block_x68TLt"
+      ],
+      "name": "Our Commitments",
+      "settings": {
+        "heading": "<strong>Self Health Resource Center<\/strong>",
+        "sub_heading": "Self Health Research Center (SHRC) is a supplement marketing company specializing in marketing supplements promoted by pioneers in the alternative and integrative health industry. Typically authors and influencers.",
+        "color_scheme": "scheme-1",
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "shrc_product_banner_k6PH4U": {
+      "type": "shrc-product-banner",
+      "blocks": {
+        "product_R8Ya4V": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1.png",
+            "product_link": ""
+          }
+        },
+        "product_UfaHYf": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2.png",
+            "product_link": ""
+          }
+        },
+        "product_FMDttp": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3.png",
+            "product_link": ""
+          }
+        },
+        "product_BQcDnd": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4.png",
+            "product_link": ""
+          }
+        },
+        "product_WcDjRg": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5.png",
+            "product_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_R8Ya4V",
+        "product_UfaHYf",
+        "product_FMDttp",
+        "product_BQcDnd",
+        "product_WcDjRg"
+      ],
+      "name": "SHRC Banner",
+      "settings": {
+        "line1_blue": "SHRC:",
+        "line1_black": "Vertically Integrated With PureNSM",
+        "line2_blue": "NCP:",
+        "line2_black": "AI Publishing Company Set To Transform Book And Supplement Sales.",
+        "box_bg": "#ecfaff",
+        "pad_top": 100,
+        "pad_bottom": 100,
+        "inner_padding": 46,
+        "header_gap": 28,
+        "product_gap": 60,
+        "rating_image": "shopify:\/\/shop_images\/ratting.png"
+      }
+    },
+    "ncp_solution_WMzMJw": {
+      "type": "ncp-solution",
+      "blocks": {
+        "brand_z7EN94": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/book.png",
+            "brand_name": "New Century Press, LLC (NCP)",
+            "brand_line_one": "Built With AI For The 22nd Century",
+            "brand_line_two": "Established 1997"
+          }
+        },
+        "problem_3w4ppJ": {
+          "type": "problem",
+          "settings": {
+            "problem_title": "Problem 1",
+            "problem_text": "Pharma dominates health discussions and has captured all government agencies and the media"
+          }
+        },
+        "problem_aXnaqm": {
+          "type": "problem",
+          "settings": {
+            "problem_title": "Problem 2",
+            "problem_text": "Consumers get “plain vanilla” answers from LLMs because copyrighted information is left out."
+          }
+        },
+        "problem_GrRz9V": {
+          "type": "problem",
+          "settings": {
+            "problem_title": "Problem 3",
+            "problem_text": "Authors have a hard time promoting their books."
+          }
+        },
+        "problem_FbwKDc": {
+          "type": "problem",
+          "settings": {
+            "problem_title": "Problem 4",
+            "problem_text": "Influencers can’t use standard LLMs to write blogs!"
+          }
+        }
+      },
+      "block_order": [
+        "brand_z7EN94",
+        "problem_3w4ppJ",
+        "problem_aXnaqm",
+        "problem_GrRz9V",
+        "problem_FbwKDc"
+      ],
+      "name": "NCP Problem Solution Section",
+      "settings": {
+        "bg_color": "#e0eeff",
+        "pad_top": 80,
+        "pad_bottom": 80,
+        "main_title": "The best way for consumers to quickly understand authors and influencers is to get instant answers from LLMs specialized in their subject matters. Our company, New Century Press (NCP) aims to bridge the gap between authors and their fans while also promoting their books.",
+        "solution_title": "NCP Solution",
+        "solution_text": "We offer authors and influencers to upload their books into our specialized LLMs. We make it easy for authors and influencers to create and publish content Consumers can access LLMs that include authors books and will be given a link to purchase books. Consumers of Non-Fiction get what they want and authors get more sales and advertising!"
+      }
+    },
+    "copyrighted_llm_section_mUTHEt": {
+      "type": "copyrighted-LLM-section",
+      "name": "Copyrighted LLM Banner",
+      "settings": {
+        "title": "Copyrighted LLMs Will DOMINATE The Internet!",
+        "subtitle": "Authors Of Many Subjects Will Benefit: Political And Social Analysis, Any Alternative Non-Mainstream Theories, Textbooks And Academic Resources, Historical Documentaries And Memoirs, Alternative Medicine And Health, And Many More.",
+        "section_bg": "#ffffff",
+        "box_bg": "#ecfaff",
+        "pad_top": 100,
+        "pad_bottom": 100,
+        "logo_1": "shopify:\/\/shop_images\/copyright_1.png",
+        "logo_2": "shopify:\/\/shop_images\/copyright_2.png",
+        "logo_3": "shopify:\/\/shop_images\/copyright_3.png",
+        "logo_4": "shopify:\/\/shop_images\/copyright_4.png"
+      }
+    },
+    "review_BUP4UG": {
+      "type": "review",
+      "blocks": {
+        "item_KVzLG6": {
+          "type": "item",
+          "settings": {
+            "star": 5,
+            "text": "Established in 1993 we have developed extensive distribution contacts for books about alternative medicine. NCP is a vendor for Ingram, Baker & Taylor, Amazon, BN.com, and other distributors that target alternative bookstores and health food stores. We personally work with you from start to finish.",
+            "cus_image": "shopify:\/\/shop_images\/Group_1171275965.svg",
+            "cus_name": "John Doe",
+            "customer": "customer"
+          }
+        },
+        "item_8EhwVA": {
+          "type": "item",
+          "settings": {
+            "star": 4,
+            "text": "Established in 1993 we have developed extensive distribution contacts for books about alternative medicine. NCP is a vendor for Ingram, Baker & Taylor, Amazon, BN.com, and other distributors that target alternative bookstores and health food stores. We personally work with you from start to finish.",
+            "cus_image": "shopify:\/\/shop_images\/Group_1171275965.svg",
+            "cus_name": "John Doe",
+            "customer": "customer"
+          }
+        },
+        "item_xBrGaX": {
+          "type": "item",
+          "settings": {
+            "star": 4,
+            "text": "Established in 1993 we have developed extensive distribution contacts for books about alternative medicine. NCP is a vendor for Ingram, Baker & Taylor, Amazon, BN.com, and other distributors that target alternative bookstores and health food stores. We personally work with you from start to finish.",
+            "cus_image": "shopify:\/\/shop_images\/Group_1171275965.svg",
+            "cus_name": "John Doe",
+            "customer": "customer"
+          }
+        },
+        "item_FB7Mya": {
+          "type": "item",
+          "settings": {
+            "star": 4,
+            "text": "Established in 1993 we have developed extensive distribution contacts for books about alternative medicine. NCP is a vendor for Ingram, Baker & Taylor, Amazon, BN.com, and other distributors that target alternative bookstores and health food stores. We personally work with you from start to finish.",
+            "cus_image": "shopify:\/\/shop_images\/Group_1171275965.svg",
+            "cus_name": "John Doe",
+            "customer": "customer"
+          }
+        },
+        "item_cpUijD": {
+          "type": "item",
+          "settings": {
+            "star": 4,
+            "text": "Established in 1993 we have developed extensive distribution contacts for books about alternative medicine. NCP is a vendor for Ingram, Baker & Taylor, Amazon, BN.com, and other distributors that target alternative bookstores and health food stores. We personally work with you from start to finish.",
+            "cus_image": "shopify:\/\/shop_images\/Group_1171275965.svg",
+            "cus_name": "John Doe",
+            "customer": "customer"
+          }
+        }
+      },
+      "block_order": [
+        "item_KVzLG6",
+        "item_8EhwVA",
+        "item_xBrGaX",
+        "item_FB7Mya",
+        "item_cpUijD"
+      ],
+      "name": "Review Slider",
+      "settings": {
+        "title": "<strong>Customer Reviews<\/strong>",
+        "sub_title": "Explore Genres and Topics That Inspire and Engage",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_blog_jtLxUw": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "Blog",
+        "heading_size": "h2",
+        "sub_title": "Read our latest blogs",
+        "columns_desktop": 3,
+        "spacing_grid_horizontal": 8,
+        "spacing_grid_horizontal_mobile": 4,
+        "spacing_grid_vertical": 8,
+        "spacing_grid_vertical_mobile": 4,
+        "show_view_all": true,
+        "read_btn": "Read more",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "ck_collections_tab_VErgjE",
+    "collections_tab_inDPX8",
+    "collection_slider_CnPz6Y",
+    "image_with_text_tttt9D",
+    "featured_collection",
+    "ck_image_with_text_txQdgf",
+    "our_commitments_gigzMb",
+    "shrc_product_banner_k6PH4U",
+    "ncp_solution_WMzMJw",
+    "copyrighted_llm_section_mUTHEt",
+    "review_BUP4UG",
+    "featured_blog_jtLxUw"
+  ]
+}

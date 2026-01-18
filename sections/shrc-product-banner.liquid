@@ -1,0 +1,322 @@
+<style>
+.shrc-wrap {
+  background: #ffffff;
+  padding-top: {{ section.settings.pad_top }}px;
+  padding-bottom: {{ section.settings.pad_bottom }}px;
+}
+
+.shrc-box {
+  margin: auto;
+  background: {{ section.settings.box_bg }};
+  border: 1px solid #155298;
+  border-radius: 20px;
+  padding: {{ section.settings.inner_padding }}px;
+}
+
+.shrc-header {
+  text-align: center;
+  margin-bottom: {{ section.settings.header_gap }}px;
+}
+
+.shrc-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.blue {
+  font-family: Helvetica;
+  color: #155298;
+  font-size: 39px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.black {
+  font-family: Helvetica;
+  color: #000000;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.shrc-row {
+  display: flex;
+  justify-content: center;
+}
+
+.shrc-products {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: {{ section.settings.product_gap }}px;
+  flex-wrap: nowrap;
+}
+
+.shrc-item {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.shrc-product,
+.shrc-product--nolink {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.shrc-product img,
+.shrc-product--nolink img {
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+}
+
+.shrc-rating-item img {
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .shrc-products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: {{ section.settings.product_gap }}px;
+    justify-items: center;
+    align-items: end;
+    width: 100%;
+  }
+  section.shrc-wrap {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+    .shrc-box {
+        padding: 20px;
+    }
+    .blue {
+        font-size: 18px;
+        line-height: 30px;
+    }
+        .black {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+  .shrc-rating-item img {
+    max-width: 230px;
+  }
+}
+
+@media (max-width: 767px) {
+  .shrc-products {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: end;
+    width: 100%;
+  }
+    .shrc-box {
+        padding: 20px;
+    }
+    .shrc-line {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: 8px;
+  }
+    .blue {
+        font-size: 16px;
+        line-height: 30px;
+    }
+        .black {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .shrc-header {
+    text-align: unset;
+    margin-bottom: 28px;
+}
+  section.shrc-wrap {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+  .shrc-product img,
+  .shrc-product--nolink img {
+    max-height: 170px;
+  }
+
+  .shrc-rating-item img {
+    max-width: 150px;
+  }
+}
+</style>
+
+<section class="shrc-wrap">
+  <div class="shrc-box-container page-width">
+    <div class="shrc-box">
+  
+      <div class="shrc-header">
+        <div class="shrc-line">
+          <span class="blue">{{ section.settings.line1_blue }}</span>
+          <span class="black">{{ section.settings.line1_black }}</span>
+        </div>
+        <div class="shrc-line">
+          <span class="blue">{{ section.settings.line2_blue }}</span>
+          <span class="black">{{ section.settings.line2_black }}</span>
+        </div>
+      </div>
+  
+      <div class="shrc-row">
+        <div class="shrc-products">
+          {% for block in section.blocks %}
+            {% if block.settings.image %}
+              {% if block.settings.product_link != blank %}
+                <a class="shrc-item shrc-product" href="{{ block.settings.product_link }}">
+                  <img src="{{ block.settings.image | image_url: width: 240 }}" alt="Product" loading="lazy">
+                </a>
+              {% else %}
+                <span class="shrc-item shrc-product--nolink">
+                  <img src="{{ block.settings.image | image_url: width: 240 }}" alt="Product" loading="lazy">
+                </span>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+  
+          {% if section.settings.rating_image %}
+            <span class="shrc-item shrc-rating-item">
+              <img src="{{ section.settings.rating_image | image_url: width: 260 }}" alt="Rating" loading="lazy">
+            </span>
+          {% endif %}
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "SHRC Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "line1_blue",
+      "label": "Line 1 Blue",
+      "default": "SHRC:"
+    },
+    {
+      "type": "text",
+      "id": "line1_black",
+      "label": "Line 1 Black",
+      "default": "Vertically Integrated With PureNSM"
+    },
+    {
+      "type": "text",
+      "id": "line2_blue",
+      "label": "Line 2 Blue",
+      "default": "NCP:"
+    },
+    {
+      "type": "text",
+      "id": "line2_black",
+      "label": "Line 2 Black",
+      "default": "AI Publishing Company Set To Transform Book And Supplement Sales."
+    },
+    {
+      "type": "color",
+      "id": "box_bg",
+      "label": "Box Background Color",
+      "default": "#eef7ff"
+    },
+    {
+      "type": "range",
+      "id": "pad_top",
+      "label": "Section Top Padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "pad_bottom",
+      "label": "Section Bottom Padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "inner_padding",
+      "label": "Inner Box Padding",
+      "min": 10,
+      "max": 90,
+      "step": 4,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "label": "Header Bottom Gap",
+      "min": 0,
+      "max": 70,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "product_gap",
+      "label": "Gap Between Items",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 20
+    },
+    {
+      "type": "image_picker",
+      "id": "rating_image",
+      "label": "Rating Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product Image"
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Product Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "SHRC Banner",
+      "blocks": [
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" }
+      ]
+    }
+  ]
+}
+{% endschema %}

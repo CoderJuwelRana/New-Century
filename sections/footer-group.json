@@ -1,0 +1,157 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "newsletter_HMgU6d": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_kxKFFw": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join the New Century Press Newsletter",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_APNxmR": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get the latest offers and deals — straight to your inbox.<\/p>"
+          }
+        },
+        "email_form_9HpEVi": {
+          "type": "email_form",
+          "settings": {
+            "button_text": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"9\" height=\"16\" viewbox=\"0 0 9 16\" fill=\"none\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M0.329505 15.4205C-0.109835 14.9812 -0.109835 14.2688 0.329505 13.8295L6.28401 7.875L0.329505 1.92049C-0.109835 1.48116 -0.109835 0.768845 0.329505 0.329506C0.768845 -0.109835 1.48116 -0.109835 1.9205 0.329506L8.6705 7.0795C9.10983 7.51884 9.10983 8.23116 8.6705 8.6705L1.9205 15.4205C1.48116 15.8598 0.768845 15.8598 0.329505 15.4205Z\" fill=\"white\"><\/path>\n<\/svg>",
+            "check_info": "Sign up for updates on exclusive promos"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kxKFFw",
+        "paragraph_APNxmR",
+        "email_form_9HpEVi"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "section_color_scheme": "",
+        "color_scheme": "scheme-f11fadbf-884e-4552-9722-8d8dba2f5287",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "our_promises_tGjbLd": {
+      "type": "our-promises",
+      "blocks": {
+        "promise_item_hb7HHR": {
+          "type": "promise_item",
+          "settings": {
+            "p_image": "shopify:\/\/shop_images\/Services.png",
+            "p_title": "Free and Fast Delivery",
+            "p_text": "Free delivery for all orders over $299"
+          }
+        },
+        "promise_item_pMVj93": {
+          "type": "promise_item",
+          "settings": {
+            "p_image": "shopify:\/\/shop_images\/Services_1.png",
+            "p_title": "24\/7 Customer Service",
+            "p_text": "Friendly 24\/7 customer support"
+          }
+        },
+        "promise_item_Adb4zn": {
+          "type": "promise_item",
+          "settings": {
+            "p_image": "shopify:\/\/shop_images\/Services_2.png",
+            "p_title": "Money Back Guarantee",
+            "p_text": "We reurn money within 30 days"
+          }
+        },
+        "promise_item_tEdzYN": {
+          "type": "promise_item",
+          "settings": {
+            "p_image": "shopify:\/\/shop_images\/Services_3.png",
+            "p_title": "Easy Returns",
+            "p_text": "30-day returns, full refund."
+          }
+        }
+      },
+      "block_order": [
+        "promise_item_hb7HHR",
+        "promise_item_pMVj93",
+        "promise_item_Adb4zn",
+        "promise_item_tEdzYN"
+      ],
+      "name": "Our Promise",
+      "settings": {
+        "spacing_grid_horizontal": 16,
+        "spacing_grid_horizontal_mobile": 16,
+        "spacing_grid_vertical": 16,
+        "spacing_grid_vertical_mobile": 16,
+        "section_color_scheme": "scheme-3",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_information_BtFpWN": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": false
+          }
+        },
+        "link_list_Jm4XQC": {
+          "type": "link_list",
+          "settings": {
+            "heading": "company",
+            "menu": "company"
+          }
+        },
+        "link_list_WPkU7j": {
+          "type": "link_list",
+          "settings": {
+            "heading": "support",
+            "menu": "support"
+          }
+        },
+        "contact_tx4FWj": {
+          "type": "contact",
+          "settings": {
+            "heading": "get in touch",
+            "subtext": "",
+            "phone": "(000)-123-4567",
+            "email": "support@memotails.com",
+            "show_social": true
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_BtFpWN",
+        "link_list_Jm4XQC",
+        "link_list_WPkU7j",
+        "contact_tx4FWj"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "newsletter_HMgU6d",
+    "our_promises_tGjbLd",
+    "footer"
+  ]
+}

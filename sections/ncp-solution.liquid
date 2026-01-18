@@ -1,0 +1,390 @@
+<style>
+.ncp-sec{
+  background: {{ section.settings.bg_color }};
+  padding-top: {{ section.settings.pad_top }}px;
+  padding-bottom: {{ section.settings.pad_bottom }}px;
+}
+.ncp-container{
+  margin:auto;
+}
+.ncp-title{
+  text-align:center;
+  font-family:Helvetica, sans-serif;
+  color:#155298;
+  font-size:30px;
+  font-weight:700;
+  line-height:1.26;
+  margin:0;
+  padding:0 80px;
+}
+.ncp-brand-wrap{
+  display:flex;
+  justify-content:center;
+  margin:40px 0 50px;
+}
+.ncp-brand-block{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+.ncp-brand-logo img{
+  width:60px;
+  height: auto;
+  display: block;
+}
+.ncp-brand-name{
+  font-family:Helvetica, sans-serif;
+  font-weight:700;
+  font-size:24px;
+  color:#14569D;
+}
+.ncp-brand-tag{
+  font-family:Helvetica, sans-serif;
+  font-size:14px;
+  font-weight:400;
+  line-height:1.24;
+  color:#14569D;
+}
+.ncp-problem-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:16px;
+  margin-bottom:50px;
+}
+.ncp-problem-card{
+  border-radius:10px;
+  overflow:hidden;
+  background:#ECFAFF;
+  box-shadow:0 2px 5px #00000040;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.ncp-problem-head{
+  background:#2F3552;
+  color:#fff;
+  padding:29px 10px;
+  text-align:center;
+  font-family:Helvetica, sans-serif;
+  font-size:24px;
+  font-weight:600;
+}
+.ncp-problem-body{
+  padding:33px 38px;
+  font-family:Helvetica, sans-serif;
+  text-align:center;
+  font-size:18px;
+  line-height:1.2;
+  color:#3C3C3C;
+  flex-grow: 1;
+}
+.ncp-solution-box{
+  background:#ffffff;
+  padding:42px 62px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 5px 7px #00000040;
+}
+.ncp-solution-title{
+  color:#155298;
+  font-family:Helvetica, sans-serif;
+  font-size:30px;
+  font-weight:700;
+  margin:0 0 20px;
+}
+.ncp-solution-box p{
+  font-family:Helvetica, sans-serif;
+  font-size:22px;
+  font-weight:400;
+  line-height:1.45;
+  color:#000000;
+  margin:0;
+}
+
+@media (max-width: 1060px) {
+  .ncp-title{
+    font-size:26px;
+    padding:0 40px;
+  }
+  .ncp-problem-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+  }
+  .ncp-problem-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .ncp-problem-card {
+    min-width: 280px;
+    width: 40%;
+    height: 205px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+  .ncp-problem-head {
+    padding: 22px 10px;
+    font-size: 22px;
+  }
+  .ncp-problem-body{
+    font-size:16px;
+    padding: 30px 40px;
+  }
+  .ncp-solution-box{
+    padding:36px 40px;
+  }
+  .ncp-solution-box p{
+    font-size:20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ncp-sec {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .ncp-title{
+    font-size:22px;
+    padding:0 10px;
+    line-height:1.35;
+  }
+  .ncp-brand-wrap{
+    margin:30px 0 40px;
+  }
+  .ncp-brand-block{
+    align-items:center;
+  }
+  .ncp-brand-logo img{
+    width:52px;
+  }
+  .ncp-brand-name{
+    font-size:20px;
+  }
+  .ncp-brand-tag{
+    font-size:13px;
+  }
+  .ncp-problem-head{
+    font-size:20px;
+    padding:22px 10px;
+  }
+  .ncp-problem-body{
+    font-size:16px;
+    padding:24px 20px;
+  }
+  .ncp-solution-title{
+    font-size:26px;
+  }
+  .ncp-solution-box{
+    padding:32px 30px;
+  }
+  .ncp-solution-box p{
+    font-size:18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ncp-sec {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .ncp-title{
+    font-size:20px;
+    padding: 0;
+  }
+  .ncp-brand-block{
+    flex-direction:column;
+    text-align:center;
+    gap:8px;
+  }
+  .ncp-brand-logo img{
+    width:48px;
+  }
+  .ncp-brand-name{
+    font-size:18px;
+  }
+  .ncp-brand-tag{
+    font-size:12px;
+  }
+  .ncp-problem-card {
+    min-width: 85%;
+    height: 190px;
+  }
+  .ncp-problem-head{
+    font-size:18px;
+    padding: 20px;
+  }
+  .ncp-problem-body{
+    font-size:15px;
+    padding: 30px 35px;
+  }
+  .ncp-solution-title{
+    font-size:22px;
+  }
+  .ncp-solution-box{
+    padding:26px 20px;
+  }
+  .ncp-solution-box p{
+    font-size:16px;
+  }
+}
+</style>
+
+<section class="ncp-sec">
+  <div class="ncp-box page-width">
+    <div class="ncp-container">
+
+    <h2 class="ncp-title">{{ section.settings.main_title }}</h2>
+
+    {% for block in section.blocks %}
+      {% if block.type == 'brand' %}
+        <div class="ncp-brand-wrap">
+          <div class="ncp-brand-block">
+            {% if block.settings.logo != blank %}
+              <div class="ncp-brand-logo">
+                 <img src="{{ block.settings.logo | image_url }}">
+              </div>
+            {% endif %}
+            <div>
+              <div class="ncp-brand-name">{{ block.settings.brand_name }}</div>
+              <div class="ncp-brand-tag">{{ block.settings.brand_line_one }}</div>
+              <div class="ncp-brand-tag">{{ block.settings.brand_line_two }}</div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="ncp-problem-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'problem' %}
+          <div class="ncp-problem-card">
+             <div class="ncp-problem-head">{{ block.settings.problem_title }}</div>
+            <div class="ncp-problem-body">{{ block.settings.problem_text }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="ncp-solution-box">
+      <h3 class="ncp-solution-title">{{ section.settings.solution_title }}</h3>
+      <p>{{ section.settings.solution_text }}</p>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NCP Problem & Solution",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background Color",
+      "default": "#eaf3ff"
+    },
+    {
+      "type": "range",
+      "id": "pad_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "pad_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 80
+    },
+    {
+      "type": "textarea",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "The Best Way For Consumers To Quickly Understand Authors And Influencers Is To Get Instant Answers From LLMs Specialized In Their Subject Matters."
+    },
+    {
+      "type": "text",
+      "id": "solution_title",
+      "label": "Solution Title",
+      "default": "NCP Solution"
+    },
+    {
+      "type": "textarea",
+      "id": "solution_text",
+      "label": "Solution Text",
+      "default": "We Offer Authors And Influencers To Upload Their Books Into Our Specialized LLMs."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand",
+      "name": "Brand Logo",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo Image"
+        },
+        {
+          "type": "text",
+          "id": "brand_name",
+          "label": "Brand Name",
+          "default": "New Century Press, LLC (NCP)"
+        },
+        {
+          "type": "text",
+          "id": "brand_line_one",
+          "label": "Brand Line 1",
+          "default": "Built With AI For The 22nd Century"
+        },
+        {
+          "type": "text",
+          "id": "brand_line_two",
+          "label": "Brand Line 2",
+          "default": "Established 1997"
+        }
+      ]
+    },
+    {
+      "type": "problem",
+      "name": "Problem Box",
+      "settings": [
+        {
+          "type": "text",
+          "id": "problem_title",
+          "label": "Problem Title",
+          "default": "Problem 1"
+        },
+        {
+          "type": "textarea",
+          "id": "problem_text",
+          "label": "Problem Description",
+          "default": "Problem description text here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "NCP Problem Solution Section",
+      "blocks": [
+        { "type": "brand" },
+        { "type": "problem" },
+        { "type": "problem" },
+        { "type": "problem" },
+        { "type": "problem" }
+      ]
+    }
+  ]
+}
+{% endschema %}

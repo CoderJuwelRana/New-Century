@@ -1,0 +1,203 @@
+<style>
+    .llm-wrap {
+    background: {{ section.settings.section_bg }};
+    }
+
+    .llm-box {
+        margin: auto;
+        background: {{ section.settings.box_bg }};
+        border: 1px solid #155298;
+        border-radius: 20px;
+        padding: 40px 80px;
+        text-align: center;
+        }
+
+    .llm-title {
+        font-family: Helvetica;
+        font-size: 48px;
+        font-weight: 700;
+        color: #155298;
+        margin: 0;
+        margin-bottom: 25px;
+    }
+
+   .llm-subtitle {
+        font-family: Helvetica;
+        font-size: 22px;
+        line-height: 1.27;
+        font-weight: 400;
+        color: #000000;
+        margin: 0 auto 46px;
+    }
+
+    .llm-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .llm-logos img {
+    width: auto;
+    }
+
+    @media (max-width: 1060px) and (min-width: 770px) {
+    .llm-box {
+        padding: 35px 40px;
+    }
+
+    .llm-title {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .llm-subtitle {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .llm-logos {
+        gap: 32px;
+    }
+
+    .llm-logos img {
+        max-height: 48px;
+    }
+    }
+
+
+    @media (max-width: 768px) {
+        .llm-box {
+            border-radius: 12px;
+            padding: 31px 20px;
+        }
+        .llm-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .llm-subtitle {
+            font-size: 14px;
+            margin: 0 auto 30px;
+        }
+          .llm-logos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .llm-logos img {
+            justify-self: center;
+            width: 135px;
+            height: auto;
+        }
+    }
+</style>
+
+<section class="llm-wrap" style="padding-top: {{ section.settings.pad_top }}px; padding-bottom: {{ section.settings.pad_bottom }}px;">
+    <div class="llm-box-container page-width">
+        <div class="llm-box">
+          <h2 class="llm-title">{{ section.settings.title }}</h2>
+          <p class="llm-subtitle">{{ section.settings.subtitle }}</p>
+      
+          <div class="llm-logos">
+            {% if section.settings.logo_1 %}
+              <img src="{{ section.settings.logo_1 | image_url }}" alt="">
+            {% endif %}
+            {% if section.settings.logo_2 %}
+              <img src="{{ section.settings.logo_2 | image_url }}" alt="">
+            {% endif %}
+            {% if section.settings.logo_3 %}
+              <img src="{{ section.settings.logo_3 | image_url }}" alt="">
+            {% endif %}
+            {% if section.settings.logo_4 %}
+              <img src="{{ section.settings.logo_4 | image_url }}" alt="">
+            {% endif %}
+            {% if section.settings.logo_5 %}
+              <img src="{{ section.settings.logo_5 | image_url }}" alt="">
+            {% endif %}
+          </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Copyrighted LLM Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Copyrighted LLMs Will DOMINATE The Internet!"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Authors Of Many Subjects Will Benefit: Political And Social Analysis, Any Alternative Non-Mainstream Theories, Textbooks And Academic Resources, Historical Documentaries And Memoirs, Alternative Medicine And Health, And Many More."
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "box_bg",
+      "label": "Box Background Color",
+      "default": "#eef8ff"
+    },
+    {
+      "type": "range",
+      "id": "pad_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "pad_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 60
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_1",
+      "label": "Logo 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_2",
+      "label": "Logo 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_3",
+      "label": "Logo 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_4",
+      "label": "Logo 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_5",
+      "label": "Logo 5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Copyrighted LLM Section"
+    }
+  ]
+}
+{% endschema %}

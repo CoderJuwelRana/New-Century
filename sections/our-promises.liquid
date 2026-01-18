@@ -1,0 +1,233 @@
+{%- style -%}
+  #shopify-section-{{ section.id }}{
+    --grid-desktop-vertical-spacing: {{ section.settings.spacing_grid_vertical }}px;
+    --grid-desktop-horizontal-spacing: {{ section.settings.spacing_grid_horizontal }}px;
+    --grid-mobile-vertical-spacing: {{ section.settings.spacing_grid_vertical_mobile }}px;
+    --grid-mobile-horizontal-spacing: {{ section.settings.spacing_grid_horizontal_mobile }}px;
+
+  }
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+{%- endstyle -%}
+
+<style>
+  .our-promise-section {
+    .ops-item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .ops-image {
+      width: 80px;
+      height: 80px;
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+    .ops-text-area.rte {
+      width: calc(100% - 110px);
+    }
+    h4.title {
+      letter-spacing: normal;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    p.text {
+      letter-spacing: normal;
+      line-height: 1.2;
+      margin-top: 0px;
+    }
+    @media screen and (max-width: 749px) {
+      .ops-item {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .ops-image {
+        width: 60px;
+        height: 60px;
+      }
+      .ops-text-area.rte {
+        width: 100%;
+        text-align: center;
+      }
+      h4.title {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+      p.text {
+        font-size: 12px;
+      }
+    }
+  }
+</style>
+
+<div class="our-promise-section section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
+  <div class="page-width">
+    <div class="ops-wrapper grid grid--2-col grid--2-col-tablet grid--4-col-desktop">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign p_image = block.settings.p_image
+          assign p_title = block.settings.p_title
+          assign p_text = block.settings.p_text
+        -%}
+
+        <div class="ops-item grid__item" {{ block.shopify_attributes }}>
+          <div class="ops-image">
+            {%- if p_image != blank -%}
+              {{ p_image | image_url: width: p_image.width | image_tag: loading: 'lazy' }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag }}
+            {%- endif -%}
+          </div>
+          <div class="ops-text-area rte">
+            {%- if p_title != blank -%}
+              <h4 class="title">{{ p_title }}</h4>
+            {%- endif -%}
+            {%- if p_text != blank -%}
+              <p class="text">{{ p_text }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Our Promise",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:settings_schema.layout.settings.paragraph__grid.content"
+    },
+    {
+      "type": "range",
+      "id": "spacing_grid_horizontal",
+      "min": 4,
+      "max": 40,
+      "step": 4,
+      "default": 8,
+      "unit": "px",
+      "label": "t:settings_schema.layout.settings.spacing_grid_horizontal.label"
+    },
+    {
+      "type": "range",
+      "id": "spacing_grid_horizontal_mobile",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 4,
+      "unit": "px",
+      "label": "Horizontal space mobile"
+    },
+    {
+      "type": "range",
+      "id": "spacing_grid_vertical",
+      "min": 4,
+      "max": 40,
+      "step": 4,
+      "default": 8,
+      "unit": "px",
+      "label": "t:settings_schema.layout.settings.spacing_grid_vertical.label"
+    },
+    {
+      "type": "range",
+      "id": "spacing_grid_vertical_mobile",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 4,
+      "unit": "px",
+      "label": "Vertical space mobile"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-with-text.settings.header_colors.content"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promise_item",
+      "name": "Promise Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "p_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "p_title",
+          "label": "Title",
+          "default": "Free and Fast Delivery"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "p_text",
+          "label": "Text",
+          "default": "Free delivery for all orders over $299"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Promise",
+      "blocks": [
+        {
+          "type": "promise_item"
+        },
+        {
+          "type": "promise_item"
+        },
+        {
+          "type": "promise_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

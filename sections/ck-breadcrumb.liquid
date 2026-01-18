@@ -1,0 +1,162 @@
+<style>
+      .ck-breadcrumb-section {
+      background: {{ section.settings.background | default: '#F3F4F6' }};
+    }
+
+    .breadcrumbs {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 30px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+     .breadcrumbs h2.page-title {
+      margin: 0;
+      font-weight: bold;
+  }
+    .breadcrumbs__list {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 16px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .breadcrumbs__item {
+      color: {{ section.settings.page-color | default: '#888888' }};
+          letter-spacing: normal;
+    }
+
+    .breadcrumbs__item a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .breadcrumbs__item:not(:last-child)::after {
+      content: "/";
+      margin-left: 5px;
+      color: #999;
+    }
+
+    .breadcrumbs__item:last-child {
+      color: {{ section.settings.current-page-color | default: '#000' }};
+    }
+
+    .breadcrumbs-collection-title {
+      grid-area: title;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    /* Tablet */
+    @media (max-width: 989px) {
+      .breadcrumbs {
+        grid-template-columns: auto auto;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 749px) {
+      .breadcrumbs {
+        display: block;
+      }
+
+      .breadcrumbs__list {
+        font-size: 13px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+
+      .breadcrumbs-collection-title {
+        padding-top: 5px;
+        text-align: left;
+      }
+    }
+</style>
+
+{%- unless template == 'index' or template == 'cart' or template == '404' -%}
+  <nav class="breadcrumbs page-width" role="navigation" aria-label="Breadcrumb">
+    <ol class="breadcrumbs__list">
+      <!-- Home -->
+      <li class="breadcrumbs__item">
+        <a href="{{ routes.root_url }}">Home</a>
+      </li>
+
+      {%- if template contains 'product' and product -%}
+        {%- assign breadcrumb_collection = collection | default: product.collections.first -%}
+
+        {%- if breadcrumb_collection -%}
+          <li class="breadcrumbs__item">
+            <a href="{{ breadcrumb_collection.url }}">
+              {{ breadcrumb_collection.title }}
+            </a>
+          </li>
+        {%- endif -%}
+
+        <li class="breadcrumbs__item breadcrumbs__item--current">
+          {{ product.title }}
+        </li>
+
+      {%- elsif template contains 'collection' and collection -%}
+        <li class="breadcrumbs__item breadcrumbs__item--current">
+          {{ collection.title }}
+        </li>
+
+      {%- elsif template contains 'page' and page -%}
+        <li class="breadcrumbs__item breadcrumbs__item--current">
+          {{ page.title }}
+        </li>
+      {%- endif -%}
+    </ol>
+
+    {%- if section.settings.page_title != blank -%}
+      <h2 class="page-title">{{ section.settings.page_title }}</h2>
+    {%- endif -%}
+  </nav>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "CK - Breadcrumb",
+  "tag": "section",
+  "class": "ck-breadcrumb-section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Page Title"
+    },
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background",
+      "default": "#F3F4F6"
+    },
+    {
+      "type": "color",
+      "id": "page-color",
+      "label": "Menu Color",
+      "default": "#888888"
+    },
+    {
+      "type": "color",
+      "id": "current-page-color",
+      "label": "Last Menu Color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CK - Breadcrumb"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,143 @@
+.section-product-tabs product-tabs {
+  --product-tabs-border: none;
+  --product-tabs-border-width: 0px;
+  display: block;  
+}
+
+.section-product-tabs .product-tab--contents {
+  overflow: hidden;
+  position: relative;
+  transition: all .75s cubic-bezier(.075, .82, .165, 1);
+  -webkit-transition: all .75s cubic-bezier(.075, .82, .165, 1);
+  -moz-transition: all .75s cubic-bezier(.075, .82, .165, 1);
+  -ms-transition: all .75s cubic-bezier(.075, .82, .165, 1);
+  -o-transition: all .75s cubic-bezier(.075, .82, .165, 1);
+}
+
+.section-product-tabs .product-tab--buttons {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: clip;
+  scrollbar-width: thin;
+  border: var(--product-tabs-border-width) var(--product-tabs-border) var(--color-border);
+}
+
+.section-product-tabs .product-tab--buttons-list {
+  display: flex;
+  flex-wrap: nowrap;
+  width: auto;
+}
+
+.section-product-tabs .product-tab--button {
+  flex: 0 0 25%;
+  flex: 1;
+  width: auto;
+  height: 60px;
+  /* font-size: 20px; */
+  padding: 0 15px;
+  position: relative;
+  background-color: transparent;
+  white-space: nowrap;
+  line-height: 1.1;
+  cursor: pointer;
+  border: none;
+}
+
+.section-product-tabs .product-tab--button {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-weight-600);
+  color: var(--color-foreground);
+}
+
+.section-product-tabs .product-active--color-swap .product-tab--button:is(.custom-color) {
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+}
+
+.section-product-tabs .product-active--color-swap .product-tab--button:is(.custom-color) > :is(h1, h2, h3, h4, h5, h6, p, *) {
+  color: inherit;
+}
+
+.section-product-tabs .product-active--color-swap .product-tab--button:is(.custom-color):hover,
+.section-product-tabs .product-active--color-swap .product-tab--button:is(.custom-color).active {
+  color: var(--color-background);
+  background-color: var(--color);
+}
+
+.section-product-tabs .product-tab--button + .product-tab--button {
+  border-left: var(--product-tabs-border-width) var(--product-tabs-border) var(--color-border);
+}
+
+.section-product-tabs .product-tab--contents .product-tab--content {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+}
+
+.section-product-tabs .tab__content-inner {
+  padding: 20px 40px 40px;
+}
+
+.section-product-tabs .product-tab--contents .product-tab--content {
+  transition: .2s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(50px);
+  -webkit-transform: translate(50px);
+  -moz-transform: translate(50px);
+  -ms-transform: translate(50px);
+  -o-transform: translate(50px);
+}
+
+.section-product-tabs .product-tab--contents .product-tab--content.active {
+  transform: translate(0px);
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  -webkit-transform: translate(0px);
+  -moz-transform: translate(0px);
+  -ms-transform: translate(0px);
+  -o-transform: translate(0px);
+  -webkit-transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  -moz-transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  -ms-transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  -o-transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.section-product-tabs .product-tab--contents {
+  border-right: var(--product-tabs-border-width) var(--product-tabs-border) var(--color-border);
+  border-bottom: var(--product-tabs-border-width) var(--product-tabs-border) var(--color-border);
+  border-left: var(--product-tabs-border-width) var(--product-tabs-border) var(--color-border);
+}
+
+.section-product-tabs .product-active--border-underline .product-tab--button:hover .tab__button-label::before,
+.section-product-tabs .product-active--border-underline .product-tab--button.active .tab__button-label::before {
+  width: 74px;
+}
+
+.section-product-tabs .product-active--border-underline .product-tab--button .tab__button-label:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  background-color: currentColor;
+  left: 50%;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+  transform: translate(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
