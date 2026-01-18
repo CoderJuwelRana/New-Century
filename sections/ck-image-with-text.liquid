@@ -139,6 +139,8 @@
     <div class="image-area">
       {%- if section.settings.image != blank -%}
         {{ section.settings.image | image_url: width: section.settings.image.width | image_tag: loading: 'lazy' }}
+      {% else %}
+        {{ 'image' | placeholder_svg_tag }}
       {%- endif -%}
     </div>
   </div>
