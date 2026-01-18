@@ -4,8 +4,8 @@
     "theme_name": "My Theme",
     "theme_version": "1.0.0",
     "theme_author": "Juwel Rana",
-    "theme_documentation_url": "https:\/\/codekanon.com\/",
-    "theme_support_url": "https:\/\/codekanon.com\/pages\/contact"
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "t:settings_schema.logo.name",
